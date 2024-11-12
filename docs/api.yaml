@@ -1,0 +1,39 @@
+openapi: 3.1.0
+info:
+  title: Oracle
+  description: public api for oracle application
+  version: 1.0.0
+servers:
+  - url: 'https'
+paths:
+  /prophecy:
+    get: 
+      description: retrive prophetic quote
+      responses: 
+        200:
+          description: 'ok'
+          content: 
+            application/json:
+              schema:
+                type: object
+                properties: 
+                  content:
+                    type: string
+                    description: prophetic quote
+    post: 
+      description: write own predictive quote   
+      requestBody: 
+        required: true
+        content: 
+          application/json:
+            schema:
+              type: object
+              properties: 
+                content:
+                  type: string
+      responses: 
+        200:
+          description: 'ok'
+                  
+                  
+  
