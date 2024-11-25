@@ -16,10 +16,15 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: 
+                properties:
+                  id:
+                    type: integer
                   content:
                     type: string
                     description: prophetic quote
+                  used: 
+                    type: boolean
+                    description: used or not  
     post: 
       description: post own predictive quote   
       requestBody: 
@@ -32,9 +37,26 @@ paths:
                 content:
                   type: string
                   required: true
+                used: 
+                  type: boolean
+                  required: false
       responses: 
         200:
           description: 'ok'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  content:
+                    type: string
+                    description: prophetic quote
+                  used:
+                    type: boolean
+                    description: used or not
+            
                   
                   
   
